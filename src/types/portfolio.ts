@@ -62,6 +62,7 @@ export interface FeaturedProject {
   asciiId: AsciiAnimationId;
   repoUrl?: string;
   demoUrl?: string;
+  pdfUrl?: string;
   labType?: string;
   extraLinks?: ProjectLink[];
 }

@@ -193,6 +193,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
         'Hardened Wi-Fi access with WPA2-Enterprise (IEEE 802.1X) using FreeRADIUS and hostapd (PEAP/MSCHAPv2).',
       ],
       asciiId: 'wifiRadar',
+      pdfUrl: '/Rogue_AP_deployment.pdf',
       labType: 'Hardware / Academic Lab',
     },
     {
@@ -235,6 +236,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       ],
       asciiId: 'hpcCluster',
       repoUrl: 'https://github.com/Torres08/TFG_HPC_Server',
+      pdfUrl: '/TFG_Juan_Luis_Torres_Ramos.pdf',
     },
   ],
   secondaryProjects: [

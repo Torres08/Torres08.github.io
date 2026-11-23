@@ -168,7 +168,20 @@ export const DeploymentsSection: React.FC<DeploymentsSectionProps> = ({
                     />
                   </a>
                 )}
-                {!project.repoUrl && !project.demoUrl && (
+                {project.pdfUrl && (
+                  <a
+                    href={project.pdfUrl}
+                    download={project.pdfUrl.split('/').pop() || 'writeup.pdf'}
+                    className="flex-1 py-3 px-5 text-center text-xs font-semibold uppercase tracking-label text-primary bg-canvas hover:bg-[#9A6CC6] hover:text-black border-hairline"
+                  >
+                    <ScrambleText
+                      text="[ DOWNLOAD_WRITEUP_PDF ]"
+                      motionEnabled={motionEnabled}
+                      glitchIntensity={glitchIntensity}
+                    />
+                  </a>
+                )}
+                {!project.repoUrl && !project.demoUrl && !project.pdfUrl && (
                   <button
                     type="button"
                     onClick={() => onInspectFeaturedLab(project)}

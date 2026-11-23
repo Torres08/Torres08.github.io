@@ -11,8 +11,8 @@ const FRAME_WIDTH = 23;
 
 const HEAD = (mouth: string): string[] => [
   '/\\_______/\\',
-  '/   *   *   \\',
-  `\\     ${mouth}     /`,
+  '/           \\',
+  `\\  *  ${mouth}  *  /`,
 ];
 
 const RAW_FRAMES: Record<BongoCatState, string[]> = {
