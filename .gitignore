@@ -1,0 +1,10 @@
+node_modules/
+dist/
+dist-ssr/
+resources/
+*.local
+*.log
+*.aux
+*.out
+*.toc
+.DS_Store

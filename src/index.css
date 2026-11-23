@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-canvas: #000000;
+  --bg-panel: #070707;
+  --border-hairline: #1e1e1e;
+  --text-primary: #eaeaea;
+  --text-muted: #737373;
+  --prompt-user: #9a6cc6;
+  --prompt-path: #9a6cc6;
+  --accent-invert-bg: #9a6cc6;
+  --accent-invert-fg: #000000;
+  --font-mono: 'IBM Plex Mono', monospace;
+  --letter-spacing-body: 0.04em;
+  --letter-spacing-label: 0.14em;
+}
+
+* {
+  border-radius: 0px !important;
+  box-shadow: none !important;
+}
+
+html,
+body {
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
+  line-height: 1.75;
+  letter-spacing: var(--letter-spacing-body);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.tracking-label {
+  letter-spacing: var(--letter-spacing-label);
+}
+
+.tracking-body {
+  letter-spacing: var(--letter-spacing-body);
+}
+
+::selection {
+  background-color: var(--accent-invert-bg);
+  color: var(--accent-invert-fg);
+}
+
+/* Brutalist Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-canvas);
+  border-left: 1px solid var(--border-hairline);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-hairline);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9a6cc6;
+}
+
+/* Stepped blinking block cursor */
+@keyframes step-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.cursor-blink {
+  animation: step-blink 1s steps(1, end) infinite;
+}
+
+/* Stepped broken-pixel reveal inspired by eloyb.design */
+@keyframes pixel-reveal {
+  0% {
+    opacity: 0;
+    clip-path: inset(0 100% 60% 0);
+    filter: contrast(180%);
+  }
+  33% {
+    opacity: 0.7;
+    clip-path: inset(0 45% 0 0);
+  }
+  66% {
+    opacity: 0.9;
+    clip-path: inset(0 10% 15% 0);
+  }
+  100% {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    filter: contrast(100%);
+  }
+}
+
+.reveal-stepped {
+  animation: pixel-reveal 0.42s steps(4, end) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor-blink,
+  .reveal-stepped {
+    animation: none !important;
+  }
+}
